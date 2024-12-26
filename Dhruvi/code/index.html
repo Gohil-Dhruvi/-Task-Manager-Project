@@ -1,0 +1,58 @@
+<!-- JavaScript Practical Exam
+Project Title : Task Manager Project Objective :​​The objective of this project is to develop a Task Management System that allows users to perform CRUD operations (Create, Read, Update, Delete) on a list of tasks. The project will also incorporate a priority-based filter feature to help users organize and manage their tasks efficiently.
+
+Project Requirements :​1. HTML Structure (5 points) :​- Create an HTML file with a clean and organized structure for the task management system. - Include an input form to add new tasks and a dynamic list to display existing tasks.​- Fields for each task should include title, description, due date, and priority(low,medium,high).
+
+2. Adding Tasks (5 points) :​​- Implement a function (`addTask`) to collect information from users when adding a new task. - Validate that the task title and due date are provided before adding a task.​- Format the task data and add it to the task list dynamically.
+
+3. Displaying Tasks (5 points) :​- Create a function (`displayTasks`) to display tasks on the page dynamically. - Display each task with its title, description, due date, and priority.
+
+4. Local Storage (10 points) :​- Utilize local storage to persist task data even when the page is refreshed.- Implement functions to load task data from local storage on page load and save data when tasks are added or modified.
+
+5. Editing Tasks (5 points) :​​- Develop a function (`editTask`) to allow users to edit existing tasks. - Identify a unique identifier for each task to ensure accurate editing.
+
+6. Deleting Tasks (5 points) :​- Implement a function (`deleteTask`) to allow users to remove tasks from the list. - Update the page dynamically when a task is deleted.
+
+7. Priority-based filter (10 points) :​- Add a filter feature based on task priority, allowing users to view tasks - searching feature
+
+8. User Interaction (5 points) :​- Ensure that input fields are cleared after successfully adding or editing a task. - Implement a user-friendly and intuitive interface for managing tasks. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task Manager Project </title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+    <header>
+        <h1>Task Manager Project</h1>
+    </header>
+    <div class="container">
+        <form id="taskForm" class="task-form">
+            <input type="text" id="title" placeholder="Task Title" required/>
+            <input type="text" id="description" placeholder="Task Description"/>
+            <input type="date" id="dueDate" required/>
+            <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+        <div class="filter">
+            <label for="priorityFilter">Filter by Priority:</label>
+            <select id="priorityFilter">
+                <option value="all">All</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <ul id="taskList" class="task-list"></ul>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
